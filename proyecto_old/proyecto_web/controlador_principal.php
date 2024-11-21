@@ -1,0 +1,14 @@
+<?php
+define("default_controlador","memes");
+define("default_accion","mostrar_todo");
+$controlador=default_controlador;
+$modelo=default_controlador;
+$accion=default_accion;
+if(isset($_GET["controlador"])){
+    $controlador=$_GET["controlador"];
+}
+if(isset($_GET["accion"])){
+    $accion=$_GET["accion"];
+}
+include("controlador/controlador_".$controlador.".php");
+?>

@@ -1,0 +1,68 @@
+/* styles.css */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #333;
+    color: #fff;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: space-between; /* Distribuye el espacio verticalmente */
+  }
+  
+  h1 {
+    color: #ff4500;
+    text-align: center;
+  }
+  
+  
+
+    #show_me_now{
+    background-color: rgba(255, 69, 0, 0.5); /* Color semitransparente */
+    color: white;
+    border: none;
+    padding: 30px; /* Aumentado para hacer los botones más grandes */
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 50%; /* Esto asegura que los botones sean círculos */
+    box-shadow: 0 4px #999;
+    width: 300px; /* Ancho fijo para círculos grandes */
+    height: 300px; /* Altura fija para círculos grandes */
+    top: calc(50% - 150px);
+    left: calc(50% - 150px);
+    
+    position:absolute;
+  }
+  
+   
+  
+  .button:hover {background-color: rgba(224, 62, 0, 0.5)}
+  
+  .button:active {
+    background-color: rgba(224, 62, 0, 0.5);
+    box-shadow: 0 2px #666;
+    transform: translateY(2px);
+  }
+  
+  input[type=text] {
+
+    width: 80%; /* Ajustado para no ocupar todo el ancho */
+    box-sizing: border-box;
+    border: 2px solid #ff4500;
+    border-radius: 4px;
+    float: left;
+    height: 40px;
+  }
+  #show_you_now{
+    background-color: #0074d9;
+    color: white;
+    border: none;
+    cursor: pointer;
+    float:left;
+    height: 40px;
+    
+  }

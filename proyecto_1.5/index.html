@@ -1,0 +1,32 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+  $(function(){
+    $("#show_you_now").click(function(){           
+        $.post("http://127.0.0.1:5000/yolo", function(result){
+            //$("#div1").html(result);
+            alert("this is an alert");
+        });          
+    });
+    $("#show_me_now").click(function(){           
+        $.post("http://127.0.0.1:5000/yolo", function(result){
+            //$("#div1").html(result);
+            var intake = $("#text").val();
+            alert(intake);
+        });          
+    });
+});
+</script>
+<html>
+  <head>
+    <title>Ejemplo de atributo Href</title>
+  </head>
+  <body>
+    <h1>Ejemplo de atributo Href</h1>
+    <p>
+      hola
+    </p>
+    <button id="show_me_now" class="button">show me now</button>
+    <input type="text" id="text" name="text"/>
+    <button id="show_you_now" class="button">show you now</button>
+  </body>
+</html>

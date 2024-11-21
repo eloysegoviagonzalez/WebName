@@ -1,0 +1,23 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+    $(function(){
+        $("#click_me").click(function(){           
+          $.post({url: "http://127.0.0.1:5000/yolo", success: function(result){
+                //$("#div1").html(result);
+                alert(result);
+            }});          
+        });
+    });
+</script>
+<html>
+  <head>
+    <title>Ejemplo de atributo Href</title>
+  </head>
+  <body>
+    <h1>Ejemplo de atributo Href</h1>
+    <p>
+      hola
+    </p>
+    <button id="click_me" class="button">Click me</button>
+  </body>
+</html>

@@ -1,0 +1,61 @@
+/* styles.css */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #333;
+    color: #fff;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: space-between; /* Distribuye el espacio verticalmente */
+  }
+  
+  h1 {
+    color: #ff4500;
+    text-align: center;
+  }
+  
+  .button {
+    background-color: rgba(255, 69, 0, 0.5); /* Color semitransparente */
+    color: white;
+    border: none;
+    padding: 30px; /* Aumentado para hacer los botones más grandes */
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 50%; /* Esto asegura que los botones sean círculos */
+    box-shadow: 0 4px #999;
+    width: 100px; /* Ancho fijo para círculos grandes */
+    height: 100px; /* Altura fija para círculos grandes */
+    position: fixed; /* Fija los botones en la parte superior */
+    top: 20px;
+  }
+  
+  #show_me_now {
+    left: calc(50% - 120px); /* Ajusta para centrar el botón */
+  }
+  
+  #show_you_now {
+    right: calc(50% - 120px); /* Ajusta para centrar el botón */
+  }
+  
+  .button:hover {background-color: rgba(224, 62, 0, 0.5)}
+  
+  .button:active {
+    background-color: rgba(224, 62, 0, 0.5);
+    box-shadow: 0 2px #666;
+    transform: translateY(2px);
+  }
+  
+  input[type=text] {
+    width: 80%; /* Ajustado para no ocupar todo el ancho */
+    padding: 12px 20px;
+    margin: 0 auto 20px; /* Centrado y con margen inferior */
+    box-sizing: border-box;
+    border: 2px solid #ff4500;
+    border-radius: 4px;
+  }
