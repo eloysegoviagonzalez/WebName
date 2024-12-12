@@ -1,0 +1,78 @@
+<script src="../model/jquery.min.js"></script>
+<script src="script.js"></script>
+<script>
+$(function(){
+  // data outtake   
+  opt_printer();
+  $("#show_me_now").click(function(){           
+    var num_value = parseInt($("#lang").val())
+    var ValueIn = {"ValueIn":num_value};
+    var JsonIn = JSON.stringify(ValueIn);
+    $.ajax({
+      url: "http://127.0.0.1:5000/main/sender", // Especifica la URL de tu servidor Flask
+      type: "POST", // Usa el método POST
+      contentType: "application/json",
+      data: JsonIn,
+      success: function(response) {
+        dictioOut=JSON.parse(response);
+        console.log(response,dictioOut);
+        outtake=dictioOut["stringOut"];
+        if(outtake != ""){
+          alert(outtake);
+          console.log(outtake);
+        }
+      },
+      error: function(xhr, status, error) {
+        // Manejar cualquier error
+        console.error("Error at sending data to the client", error);
+      }    
+    });
+    opt_printer();
+  });
+  //data intake
+  $("#show_you_now").click(function(){           
+    var intake = [parseInt($("#lang").val()),$("#text").val()]
+    var dictioIn = {"stringIn":intake};
+    var JsonIn = JSON.stringify(dictioIn);
+    $.ajax({
+      url: "http://127.0.0.1:5000/main/catcher", // Especifica la URL de tu servidor Flask
+      type: "POST", // Usa el método POST
+      contentType: "application/json",
+      data: JsonIn,// Convierte el objeto JSON en una cadena JSON
+      success: function(response) {
+        // Manejar la respuesta del servidor (si es necesario)
+        console.log("¡Datos enviados correctamente al servidor!");
+        console.log("Respuesta del servidor:", response);
+        opt_printer();
+        alert(response);
+      },
+      error: function(xhr, status, error) {
+        // Manejar cualquier error
+        console.error("Error al enviar datos al servidor:", error);
+      }
+    });
+    opt_printer();          
+  });
+});
+</script>
+<html>
+  <head>
+    <title>Ejemplo de atributo Href</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <h1>Ejemplo de atributo Href</h1>
+    <p>
+      hola
+    </p>
+    
+    <button id="show_me_now" class="button">recive</button>
+    <div id="text_input"> 
+      <button id="show_you_now" class="button">send</button>
+      <input type="text" id="text" name="text"/>   
+      <select name="lenguajes" id="lang">
+        <option value=0>new slot</option>
+      </select>
+    </div>   
+  </body>
+</html>
